@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+<data>
+    <variable
+        name="vm"
+        type="com.example.nyarticles.viewModels.PopularArticlesItemViewModel" />
+</data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:id="@+id/articleImageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="10dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/gray_solid_color_background" />
+
+    <TextView
+        android:id="@+id/articleTitleTextView"
+        style="@style/articleTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@{vm.articleTitle}"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@id/articleImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Article Title" />
+
+
+    <TextView
+        android:id="@+id/articleAuthorTextView"
+        style="@style/articleByTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@id/articleImageView"
+        app:layout_constraintTop_toBottomOf="@id/articleTitleTextView"
+        android:text="@{vm.articleAuthor}"
+        tools:text="Article Authors" />
+
+    <ImageView
+        android:id="@+id/calendarIconImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@mipmap/calendar_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/articleAuthorTextView"
+        android:layout_marginRight="10dp"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@mipmap/arrow_point_to_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="10dp"/>
+
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/articleAuthorTextView"
+        android:text="@{vm.date}"
+        tools:text="15-16-1997"
+        android:textSize="17sp"
+       />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

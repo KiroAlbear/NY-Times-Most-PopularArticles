@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mvm"
+            type="com.example.nyarticles.viewModels.PopularArticlesViewModel"/>
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MainActivity">
+
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.mancj.materialsearchbar.MaterialSearchBar
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/MaterialSearchBarLight"
+                app:mt_textColor="@color/white"
+                app:mt_searchBarColor="@color/teal_200"
+                app:mt_placeholderColor="@color/white"
+                app:mt_hint="@string/searchBarHint"
+                app:mt_hintColor="@color/searchBarHintColor"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:mt_backIconTint="@color/white"
+                app:mt_searchIconTint="@color/white"
+                app:mt_clearIconTint="@color/white"
+                app:mt_menuDividerEnabled="true"
+                app:mt_maxSuggestionsCount="0"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/articlesRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+
+                />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

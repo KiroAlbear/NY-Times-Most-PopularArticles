@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NYArticles</string>
+    <string name="searchBarHint">ex: 1,2</string>
+</resources>
