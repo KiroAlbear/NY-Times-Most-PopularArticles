@@ -22,7 +22,37 @@ class PopularArticlesitem (
     @SerializedName("byline") val byline : String,
     @SerializedName("type") val type : String,
     @SerializedName("title") val title : String,
-    @SerializedName("abstract") val abstract : String
+    @SerializedName("abstract") val abstract : String,
+    @SerializedName("media") val media: List<Media>
+)
+
+
+data class Media (
+        @SerializedName("type")
+        val type: String,
+        @SerializedName("subtype")
+        val subtype: String,
+        @SerializedName("caption")
+        val caption: String,
+        @SerializedName("copyright")
+        val copyright: String,
+
+        @SerializedName("approved_for_syndication")
+        val approved_for_syndication: Long,
+
+        @SerializedName("media-metadata")
+        val mediaMetadata: List<MediaMetadatum>
+)
+
+data class MediaMetadatum (
+        @SerializedName("url")
+        val url: String,
+        @SerializedName("format")
+        val format: String,
+        @SerializedName("height")
+        val height: Long,
+        @SerializedName("width")
+        val width: Long
 )
 
 

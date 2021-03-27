@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(),PopularArticlesNavigataor,MaterialSearc
 
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModel = PopularArticlesViewModel(this)
-        dataBinding.mvm = viewModel
+        dataBinding.vm = viewModel
         viewModel.loadPopularArticlesByperiod(GlobalStrings.DEFAULT_ARTICLES_PERIOD)
 
 

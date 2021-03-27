@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">NYArticles</string>
-    <string name="searchBarHint">ex: 1,2</string>
+    <string name="searchBarHint">ex: 1,7,30</string>
+    <string name="articl_title_sample">Article Title</string>
+    <string name="articl_by_sample">Article Author</string>
+    <string name="articl_abstract_sample">Article Abstract</string>
+    <string name="articl_calendar_sample">12-12-2012</string>
 </resources>

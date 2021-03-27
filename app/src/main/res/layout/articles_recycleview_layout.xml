@@ -11,60 +11,60 @@
         type="com.example.nyarticles.viewModels.PopularArticlesItemViewModel" />
 </data>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainActivityLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
 
-    <ImageView
-        android:id="@+id/articleImageView"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/articleItemImageView"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="10dp"
-        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/gray_solid_color_background" />
 
     <TextView
-        android:id="@+id/articleTitleTextView"
+        android:id="@+id/articleItemTitleTextView"
         style="@style/articleTitleTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:text="@{vm.articleTitle}"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@id/articleImageView"
+        app:layout_constraintEnd_toStartOf="@+id/arrowIconItemImageView"
+        app:layout_constraintStart_toEndOf="@id/articleItemImageView"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Article Title" />
+        tools:text="@string/articl_title_sample" />
 
 
     <TextView
-        android:id="@+id/articleAuthorTextView"
+        android:id="@+id/articleItemAuthorTextView"
         style="@style/articleByTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@id/articleImageView"
-        app:layout_constraintTop_toBottomOf="@id/articleTitleTextView"
+        app:layout_constraintEnd_toStartOf="@+id/arrowIconItemImageView"
+        app:layout_constraintStart_toEndOf="@id/articleItemImageView"
+        app:layout_constraintTop_toBottomOf="@id/articleItemTitleTextView"
         android:text="@{vm.articleAuthor}"
-        tools:text="Article Authors" />
+        tools:text="@string/articl_by_sample" />
 
     <ImageView
-        android:id="@+id/calendarIconImageView"
+        android:id="@+id/calendarItemIconImageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@mipmap/calendar_icon"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/dateTextView"
-        app:layout_constraintTop_toBottomOf="@+id/articleAuthorTextView"
+        app:layout_constraintEnd_toStartOf="@+id/dateItemTextView"
+        app:layout_constraintTop_toBottomOf="@+id/articleItemAuthorTextView"
         android:layout_marginRight="10dp"/>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/arrowIconItemImageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@mipmap/arrow_point_to_right"
@@ -75,14 +75,14 @@
 
 
     <TextView
-        android:id="@+id/dateTextView"
+        android:id="@+id/dateItemTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/articleAuthorTextView"
+        app:layout_constraintEnd_toStartOf="@+id/arrowIconItemImageView"
+        app:layout_constraintTop_toBottomOf="@+id/articleItemAuthorTextView"
         android:text="@{vm.date}"
-        tools:text="15-16-1997"
+        tools:text="@string/articl_calendar_sample"
         android:textSize="17sp"
        />
 

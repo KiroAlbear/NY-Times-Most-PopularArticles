@@ -1,16 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+>
+    <data>
+        <variable
+            name="vm"
+            type="com.example.nyarticles.viewModels.PopluarArticlesDetailesViewModel" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageView
-        android:id="@+id/articleImageView"
+        android:id="@+id/articleItemImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:ba="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="@id/imageGuideLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,29 +39,43 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3" />
+            app:layout_constraintGuide_percent="0.5" />
 
     <TextView
-        android:id="@+id/articlIdTextView"
+        android:id="@+id/articleDetailesTitleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@{vm.title}"
+        tools:text = "@string/articl_title_sample"
         app:layout_constraintTop_toBottomOf="@id/imageGuideLine"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="35sp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
 
     <TextView
-        android:id="@+id/articleAbstractTextView"
+        android:id="@+id/articleDetailesAbstractTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/articlIdTextView"
+        android:text="@{vm.abstract}"
+        tools:text = "@string/articl_abstract_sample"
+        app:layout_constraintTop_toBottomOf="@id/articleDetailesTitleTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
-
-
-
-
-
+        android:textSize="25sp"
+        android:typeface="serif"
+        android:textColor="@color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
