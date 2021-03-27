@@ -21,10 +21,11 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/disc_plain_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/articleItemAuthorTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/gray_solid_color_background" />
+        tools:src="@drawable/disc_plain_grey" />
 
     <TextView
         android:id="@+id/articleItemTitleTextView"
