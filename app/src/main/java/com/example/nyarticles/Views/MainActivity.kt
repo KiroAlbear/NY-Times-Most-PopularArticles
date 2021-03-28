@@ -4,6 +4,7 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,6 +50,11 @@ class MainActivity : AppCompatActivity(),PopularArticlesNavigataor,MaterialSearc
         dataBinding.swipeRefreshLayout.isRefreshing = false
         recycleViewAdapter.notifyDataSetChanged()
     }
+
+    override fun onErrorCallApi() {
+        Toast.makeText(this,resources.getString(R.string.error_message),Toast.LENGTH_SHORT).show()
+    }
+
 
     override fun onSearchStateChanged(enabled: Boolean) {
 

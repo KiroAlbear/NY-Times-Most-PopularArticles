@@ -47,11 +47,6 @@ class PopularArticlesRecycleViewAdapter(popularArticlesResponse: PopularArticles
             intent.putExtra(GlobalStrings.ARTICLE_ABSTRACT_KEY,articles.results[position].abstract)
             it.context.startActivity(intent)
         }
-//        Picasso.get()
-//                .load(articles.results[position].media[0].mediaMetadata[0].url)
-//                .placeholder(R.drawable.gray_solid_color_background)
-//                .into(holder.articlesRecycleviewLayoutBinding.articleImageView)
-
 
     }
 

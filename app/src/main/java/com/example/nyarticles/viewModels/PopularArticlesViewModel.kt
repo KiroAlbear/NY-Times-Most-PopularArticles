@@ -1,5 +1,6 @@
 package com.example.nyarticles.viewModels
 
+import android.content.res.Resources
 import android.util.Log
 import com.example.nyarticles.ApiCall.RetrofitCall
 import com.example.nyarticles.GlobalResources.GlobalStrings
@@ -24,6 +25,7 @@ class PopularArticlesViewModel(val navigator: PopularArticlesNavigataor) {
 
                 },{
                     err -> Log.d("popularArticlesError",err.toString())
+                    navigator.onErrorCallApi()
                 })
     }
 }

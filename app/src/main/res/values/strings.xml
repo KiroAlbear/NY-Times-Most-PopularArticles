@@ -5,4 +5,5 @@
     <string name="articl_by_sample">Article Author</string>
     <string name="articl_abstract_sample">Article Abstract</string>
     <string name="articl_calendar_sample">12-12-2012</string>
+    <string name="error_message">This period is not supported</string>
 </resources>

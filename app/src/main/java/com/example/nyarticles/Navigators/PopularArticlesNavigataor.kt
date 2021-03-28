@@ -4,4 +4,5 @@ import com.example.nyarticles.Reponse.PopularArticlesResponse
 
 interface PopularArticlesNavigataor {
     fun onCallPopularArticlesApi(body:PopularArticlesResponse)
+    fun onErrorCallApi()
 }
