@@ -1,8 +1,10 @@
 package com.example.nyarticles.Views
 
 import android.app.Activity
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -40,6 +42,7 @@ class MainActivity : AppCompatActivity(),PopularArticlesNavigataor,MaterialSearc
 
         dataBinding.searchView.setOnSearchActionListener(this)
         dataBinding.swipeRefreshLayout.setOnRefreshListener {
+            dataBinding.loadingLinearLayout.visibility = View.VISIBLE
             viewModel.loadPopularArticlesByperiod()
         }
     }
@@ -49,6 +52,9 @@ class MainActivity : AppCompatActivity(),PopularArticlesNavigataor,MaterialSearc
         dataBinding.articlesRecycleView.adapter = recycleViewAdapter
         dataBinding.swipeRefreshLayout.isRefreshing = false
         recycleViewAdapter.notifyDataSetChanged()
+
+        dataBinding.loadingLinearLayout.visibility = View.GONE
+
     }
 
     override fun onErrorCallApi() {

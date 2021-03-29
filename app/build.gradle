@@ -77,8 +77,6 @@ dependencies {
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:$androidx_test_espresso"
     androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$androidx_test_espresso"
 
-    def mockk_version = "1.9.3"
-    androidTestImplementation "io.mockk:mockk-android:$mockk_version"
 
     // androidx.test
     def androidx_test = "1.1.0"
@@ -94,7 +92,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
 
 
 }
