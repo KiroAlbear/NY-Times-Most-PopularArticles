@@ -12,7 +12,7 @@ interface PopularArticlesRequest {
             @Path("period")
             period:String,
             @Query("api-key")
-            apiKey:String = "utcOx2kWGkBAsdz4XtqmepZYJzVSqjub",
+            apiKey:String ,
 
     ):io.reactivex.Observable<PopularArticlesResponse>
 

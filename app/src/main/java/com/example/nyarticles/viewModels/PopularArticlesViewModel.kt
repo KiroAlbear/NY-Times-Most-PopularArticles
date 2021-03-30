@@ -10,12 +10,13 @@ import com.example.nyarticles.esspressoTest.EsspressoIdlingResource
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class PopularArticlesViewModel(val navigator: PopularArticlesNavigataor) {
+class PopularArticlesViewModel(val navigator: PopularArticlesNavigataor,val apiKey:String) {
 
     fun loadPopularArticlesByperiod(period:String=GlobalStrings.DEFAULT_ARTICLES_PERIOD){
         EsspressoIdlingResource.increment()
         var popularArticlesRequest: PopularArticlesRequest = RetrofitCall.getPopularArticlesRequest()
-        var popularArticlesResponse = popularArticlesRequest.getPopularArticlesByPeriod(period)
+
+        var popularArticlesResponse = popularArticlesRequest.getPopularArticlesByPeriod(period,apiKey)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ response ->

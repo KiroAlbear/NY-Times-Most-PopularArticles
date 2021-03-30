@@ -4,6 +4,7 @@ import android.app.Activity
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity(),PopularArticlesNavigataor,MaterialSearc
         super.onCreate(savedInstanceState)
 
         dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewModel = PopularArticlesViewModel(this)
+        viewModel = PopularArticlesViewModel(this,GlobalStrings.API_KEY)
         dataBinding.vm = viewModel
         viewModel.loadPopularArticlesByperiod(GlobalStrings.DEFAULT_ARTICLES_PERIOD)
 
