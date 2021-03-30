@@ -17,7 +17,7 @@ This project brings articles life data from "The New Your Times" news paper and 
     ````
 * Open Android Studio >> c open an existing Project >> choose project folder.
 
-* to test functionality of the project navigate to "MainActivityTest" File.
+* to test functionality of the project navigate to "MainActivityTest" File and clickk on "Run MainActivityTest" .
 
 * <span align="center"><img width="200px" height="360px" src="docs/Images/TestScreen.png"></span>
 
