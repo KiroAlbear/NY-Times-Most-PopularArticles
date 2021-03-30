@@ -19,7 +19,7 @@ This project brings articles life data from "The New Your Times" news paper and 
 
 * to test functionality of the project navigate to "MainActivityTest" File and clickk on "Run MainActivityTest" .
 
-* <span align="center"><img width="200px" height="360px" src="docs/Images/TestScreen.png"></span>
+ <span align="center"><img width="200px" height="360px" src="docs/Images/TestScreen.png"></span>
 
 
 
