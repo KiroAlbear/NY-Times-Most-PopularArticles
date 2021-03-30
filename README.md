@@ -8,7 +8,7 @@ This project brings articles life data from "The New Your Times" news paper and 
 <span align="center"><img width="200px" height="360px" src="docs/Images/swipeToRefreshScreen.png"></span>
 <span align="center"><img width="200px" height="360px" src="docs/Images/detailesScreen.png"></span>
 
-# build and test
+# How to use this project
 
 * Clone the [source repository](https://github.com/KiroAlbear/NY-Times-Most-PopularArticles.git) from Github. 
     * On the command line, enter:
@@ -16,6 +16,8 @@ This project brings articles life data from "The New Your Times" news paper and 
     git clone https://github.com/KiroAlbear/NY-Times-Most-PopularArticles.git
     ````
 * Open Android Studio >> c open an existing Project >> choose project folder.
+
+# Test Project
 
 * to test functionality of the project navigate to "MainActivityTest" File and clickk on "Run MainActivityTest" .
 
