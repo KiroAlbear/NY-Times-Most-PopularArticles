@@ -45,12 +45,19 @@ class MainActivityTest{
     // test first 5 elements detailes activity is visible
     @Test
     fun test_selectListItem_isDetailesActivityDisplayed(){
-        for(i in 0..5){
+        for(i in 0..4){
             onView(withId(R.id.articlesRecycleView))
                 .perform(actionOnItemAtPosition<PopularArticlesRecycleViewAdapter.Companion.PopularArticlesViwHolder>(i,click()))
-            onView(withId(R.id.articleItemImageView)).check(matches(isDisplayed()))
-            onView(withId(R.id.articleDetailesTitleTextView)).check(matches(isDisplayed()))
-            onView(withId(R.id.articleDetailesAbstractTextView)).check(matches(isDisplayed()))
+
+
+            onView(withId(R.id.articleItemImageView)).check(matches(
+                withEffectiveVisibility(Visibility.VISIBLE)))
+
+            onView(withId(R.id.articleDetailesTitleTextView)).check(matches(
+                withEffectiveVisibility(Visibility.VISIBLE)))
+
+            onView(withId(R.id.articleDetailesAbstractTextView)).check(matches(
+                withEffectiveVisibility(Visibility.VISIBLE)))
             pressBack()
         }
 

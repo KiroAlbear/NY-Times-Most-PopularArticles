@@ -1,8 +1,57 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+
+}
+apply plugin: 'maven-publish'
+
+def githubProperties = new Properties()
+githubProperties.load(new FileInputStream(rootProject.file("github.properties"))) //Set env variable GPR_USER & GPR_API_KEY if not adding a properties file
+
+def getVersionName = { ->
+    return "1.1.0"
 }
 
+def getArtificatId = { ->
+    return "mypopulararticleslib"
+}
+def versionMajor = 1
+def versionMinor = 1
+def versionPatch = 1
+
+def projectVersionCode = (versionMajor*100) + (versionMinor*10) + (versionPatch*1)
+def projectVersionName = "$versionMajor.$versionMinor.$versionPatch"
+
+
+publishing {
+    publications {
+        bar(MavenPublication) {
+
+                groupId = "com.kiro.nypopulararticles"
+                artifactId = getArtificatId
+                version getVersionName()
+                artifact("$buildDir/outputs/aar/${getArtificatId()}-release.aar")
+
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+
+
+            url = uri("https://maven.pkg.github.com/KiroAlbear/NY-Times-Most-PopularArticles") // Github Package
+            credentials {
+
+                username = githubProperties['gpr.usr'] ?: System.getenv("KiroAlbear")
+                password = githubProperties['gpr.key'] ?: System.getenv("0a4e9700cbbc098d31c46a002f6aa6faf566d748")
+//                username = githubProperties.get("gpr.usr") as String?: System.getenv("kiroalbear")
+//                password = githubProperties.get("gpr.key") as String?: System.getenv("0a4e9700cbbc098d31c46a002f6aa6faf566d748")
+            }
+        }
+    }
+
+}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -12,8 +61,8 @@ android {
         applicationId "com.example.nyarticles"
         minSdkVersion 26
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode projectVersionCode
+        versionName projectVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
